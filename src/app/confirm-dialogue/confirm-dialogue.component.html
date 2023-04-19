@@ -1,0 +1,74 @@
+<div *ngIf="dialogFor =='delete'">
+    <h2 mat-dialog-title>Are you sure to delete Student .??</h2>
+    <div mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close (click)="clickBtn(false)">Cancel</button>
+        <button mat-button mat-dialog-close cdkFocusInitial (click)="clickBtn(true)">Delete</button>
+    </div>
+</div>
+<div *ngIf="dialogFor =='loggedIn'">
+    <h2 mat-dialog-title>SuccessFully! , Logged In</h2>
+    <div mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close (click)="okLogin()">Ok</button>
+    </div>
+</div>
+<div *ngIf="dialogFor =='StudentloggedIn'">
+    <h2 mat-dialog-title>SuccessFully! , Logged In</h2>
+    <div mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close (click)="okStdLogin()">Ok</button>
+    </div>
+</div>
+<div *ngIf="dialogFor =='InvalidPassword'">
+    <h2 mat-dialog-title>Password is Invalid !!</h2>
+    <div mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close (click)="okBtn()">Ok</button>
+    </div>
+</div>
+<div *ngIf="dialogFor =='NotExist'">
+    <h2 mat-dialog-title>Admin Not Exist !!</h2>
+    <div mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close (click)="okBtn()">Ok</button>
+    </div>
+</div>
+<div *ngIf="dialogFor =='studentNotExist'">
+    <h2 mat-dialog-title>Student Not Exist !!</h2>
+    <div mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close (click)="okBtn()">Ok</button>
+    </div>
+</div>
+<div *ngIf="dialogFor =='addStudent'">
+    <h2 mat-dialog-title>New Student Added</h2>
+    <div mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close (click)="okadd()">Ok</button>
+    </div>
+</div>
+<div *ngIf="dialogFor =='EmailExist'">
+    <h2 mat-dialog-title>Email Already Exist !!</h2>
+    <div mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close (click)="okBtn()">Ok</button>
+    </div>
+</div>
+<div *ngIf="dialogFor =='ErrorSignin'">
+    <h2 mat-dialog-title>Admin with this email already Exist !!</h2>
+    <div mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close (click)="okSignin()">Ok</button>
+    </div>
+</div>
+<div *ngIf="dialogFor =='SuccessSignin'">
+    <h2 mat-dialog-title>SuccessFully Signed In, Please Login!!</h2>
+    <div mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close (click)="okSignin()">Ok</button>
+    </div>
+</div>
+<div *ngIf="dialogFor =='markPresent'">
+    <h2 mat-dialog-title>Do you want to mark Your Attendance .??</h2>
+    <div mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close (click)="markBtn(false)">No</button>
+        <button mat-button mat-dialog-close cdkFocusInitial (click)="markBtn(true)">Yes</button>
+    </div>
+</div>
+<div *ngIf="dialogFor =='PasswordChanged'">
+    <h2 mat-dialog-title>Password SuccessFully Changed</h2>
+    <div mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close (click)="okBtn()">Ok</button>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<header>
+  <div class="logo"><img src="../../assets/logo.png" alt=""></div>
+  <div class="profile">{{name}}</div>
+</header>
+<nav>
+  <div class="nav-icon">
+    <mat-icon>view_headline</mat-icon>
+  </div>
+      <ul class="list">
+      <li><button class="item" (click)="dashboard()">Dashboard</button></li><hr>
+      <div class="align-bottom">
+        <li><button class="item" (click)="reset()"><span>Reset Password</span><mat-icon>lock_reset</mat-icon></button><hr></li>
+        <li><button class="item" (click)="logout()"><span>Logout</span><mat-icon>logout</mat-icon></button></li>
+      </div>
+    </ul>
+</nav>
+<section>
+    <div class="main-heading">
+      Your Attendance
+    </div>
+    <div class="attend">
+        <table>
+            <tr>
+                <th>Date</th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let date of dates">
+                <td>{{date}}</td>
+                <td>
+                  <button *ngIf="isPresent(date)" class="present btnn">Present</button>
+                  <button *ngIf="!(isPresent(date))" class="absent btnn">Absent</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</section>

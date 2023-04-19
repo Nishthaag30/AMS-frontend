@@ -1,0 +1,55 @@
+<header>
+    <div class="logo">
+      <img src="../../assets/logo.png" alt="">
+    </div> 
+</header>
+<section class="main-section">
+    <div class="main-heading">
+        Reset Password {{homeURL}}
+    </div>
+    <div class="main">
+        <div class="wrapper">
+            <form action="#" [formGroup] = "resetForm" (ngSubmit)=" onSubmit()">
+                <div class="row">
+                    <label for="old">Old Password</label>
+                    <div class="flex">
+                        <input [type]="showOld ? 'text':'password'" placeholder="Old Password" formControlName="oldPassword">
+                        <mat-icon *ngIf="!showOld" (click)="toggleold()">visibility</mat-icon>
+                        <mat-icon *ngIf="showOld" (click)="toggleold()">visibility_off</mat-icon>
+                    </div>
+                    <div *ngIf="f.oldPassword.invalid && f.oldPassword.touched">
+                        <small *ngIf="f.oldPassword.errors?.required" class="text-danger">Old Password is required</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="new">New Password</label>
+                    <div class="flex">
+                        <input [type]="showNew ? 'text':'password'" placeholder="New Password" formControlName="newPassword">
+                        <mat-icon *ngIf="!showNew" (click)="togglenew()">visibility</mat-icon>
+                        <mat-icon *ngIf="showNew" (click)="togglenew()">visibility_off</mat-icon>
+                    </div>
+                    <div *ngIf="f.newPassword.invalid && f.newPassword.touched">
+                        <small *ngIf="f.newPassword.errors?.required" class="text-danger">New Password is required</small>
+                        <small *ngIf="f.newPassword.errors?.minlength" class="text-danger">New Password should be atleast 8 characters long</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="confirm">Confirm Password</label>
+                    <div class="flex">
+                        <input [type]="showConfirm ? 'text':'password'" placeholder="Confirm new Password" formControlName="cpassword">
+                        <mat-icon *ngIf="!showConfirm" (click)="toggleconfirm()">visibility</mat-icon>
+                        <mat-icon *ngIf="showConfirm" (click)="toggleconfirm()">visibility_off</mat-icon>
+                    </div>
+                    <div *ngIf="(f.cpassword.invalid && f.cpassword.touched) || resetForm.errors?.passwordmatcherror">
+                        <small *ngIf="f.cpassword.errors?.required && f.newPassword.touched && f.cpassword.touched" class="text-danger">Confirm Password is required</small>
+                        <small *ngIf="f.cpassword.touched && f.cpassword.dirty && resetForm.errors?.passwordmatcherror" class="text-danger">Passwords do not match</small>
+                    </div>
+                </div>
+                <div class="row" id="add-btn">
+                    <button class="btn" [disabled]="resetForm.invalid">Save</button>
+                    <button class="btn" (click)="cancelBtn()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,136 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+header{
+    height: 100px;
+    width: 100%;
+    background-color:steelblue;
+}
+.logo{  
+    margin-left: 60px;
+    padding: 5px;
+}
+header .logo img{
+    height: 90px;
+    width: auto;
+}
+.main{
+    max-width: 438px;
+    padding: 0 20px;
+    margin: 100px auto;
+}
+.wrapper{
+    height: auto;
+    width: 100%;
+    background: steelblue;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px 1px rgba(0,0,0,0.1);
+}
+.wrapper .title{
+  height: 100px;
+  border-radius: 5px 5px 0 0;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper form{
+    background-color: #fff;
+    margin: 5px;
+    padding: 30px 25px 25px 25px;
+}
+.wrapper form .row{
+    margin-bottom: 15px;
+    position: relative;
+}
+.wrapper form .row label{
+    font-size: 18px;
+    font-weight: 400;
+}
+.wrapper form input{
+    margin-top: 5px;
+    height: 30px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    padding-left: 5px;
+    font-weight: 400;
+}
+form .row input:focus{
+    border-color: steelblue;
+    box-shadow: inset 0px 0px 2px 2px rgba(26, 99, 188, 0.25);
+}
+form .row input::placeholder{
+    color: #999;
+}
+.wrapper form .new{
+    margin: -8px 0 20px 0;
+}
+.wrapper form .new button{
+    background-color: white;
+    border: none;
+    color: blue;
+    font-size: 15px;
+    cursor: pointer;
+}
+.wrapper form .button{
+    width: 100%;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 450;
+    background: steelblue;
+    border: 1px solid steelblue;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 40px;
+}
+.wrapper form .new a{
+  font-size: 17px;
+  text-decoration: none;
+}
+.wrapper form .pass a:hover{
+  text-decoration: underline;
+}
+form .button:hover{
+    background: rgb(48, 85, 114);
+}
+.wrapper .row #toSelect{
+    height: 30px;
+    width: 50%;
+    margin-left: 10px;
+    background-color: rgb(228, 239, 249);
+}
+.wrapper.row #toSelect option{
+    margin-left: 100px;
+}
+
+.text-danger{
+    color: red;
+}
+.is-invalid{
+    border: 1px solid red;
+}
+button:disabled{
+    background: rgb(162, 212, 249);
+
+}
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+mat-icon{
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+}

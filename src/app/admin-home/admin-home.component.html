@@ -1,0 +1,39 @@
+<header>
+  <div class="logo"><img src="../../assets/logo.png" alt=""></div>
+  <div class="profile">{{name}}</div>
+</header>
+<nav>
+  <div class="nav-icon">
+    <mat-icon>view_headline</mat-icon>
+  </div>
+    <ul class="list">
+      <li><button class="item"><span class="nav-span">Dashboard</span><mat-icon>dashboard</mat-icon></button></li><hr>
+      <li><button class="item" (click)="studentPage()"><span class="nav-span">View Students</span><mat-icon>people</mat-icon></button></li>
+      <div class="align-bottom">
+        <li><button class="item" (click)="reset()"><span class="nav-span">Reset Password</span><mat-icon>lock_reset</mat-icon></button><hr></li>
+        <li><button class="item" (click)="logout()"><span class="nav-span">Logout</span><mat-icon>logout</mat-icon></button></li>
+      </div>
+    </ul>
+</nav>
+<section class="main">
+  <div class="main-heading">
+    Welcome To <br> ADMIN Home Page!!
+  </div>
+  <div class="content">
+    <div class="flex">
+      <mat-card>
+        <mat-card-title>Total Students : </mat-card-title>
+        <mat-card-content>{{totalStudent}}</mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-title>View All Students : </mat-card-title>
+        <mat-card-actions>
+          <button mat-raised-button class="newbtn" (click)="studentPage()">All Students</button>
+        </mat-card-actions>
+        <div class="space"></div>
+      </mat-card>
+    </div>
+    <!-- <div>Total Students : <span>{{totalStudent}}</span></div> -->
+    <!-- <div>Average Attendance : <span>{{avgAttenda nce*100}} %</span></div> -->
+  </div>
+</section>

@@ -1,0 +1,70 @@
+<header>
+    <div class="logo">
+      <img src="../../assets/logo.png" alt="">
+    </div> 
+</header>
+<section class="main">
+    <div class="main-heading">
+        Update Student
+    </div>
+    <div class="wrapper-form">
+        <form action="#" [formGroup]="updateStudentForm">
+            <div class="row" id="id">
+                <label for="rollNo">RollNo</label><br>
+                <input formControlName="rollNo" type="number" placeholder="RollNo">
+                <small *ngIf="f.rollNo.invalid && f.rollNo.touched" class = "text-danger"><br> RollNo is required</small>
+            </div>
+            <div class="flex">
+                <div class="row ">
+                    <label for="name">Name</label><br>
+                    <input formControlName="name" type="text" placeholder="Name">
+                    <small *ngIf="f.name.invalid && f.name.touched" class = "text-danger"><br>Name is required</small>
+                </div>
+                <div class="row">
+                    <label for="DOB">DOB</label><br>
+                    <div class="newflex">
+                        <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" formControlName="DOB" placeholder="Date-of-Birth">
+                        <mat-datepicker-toggle matIcon [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker startView="year" [startAt]="minDate"></mat-datepicker>
+                    </div>
+                    <small *ngIf="f.DOB.invalid && f.DOB.touched" class = "text-danger">Date-of-Birth is required</small>
+                </div>
+            </div>
+            <div class="row">
+                <label for="mobile">Mobile No</label><br>
+                <input formControlName="mobile" type="tel" >
+                <div *ngIf="f.mobile.invalid && f.mobile.touched">
+                    <small *ngIf="f.mobile.errors?.required" class = "text-danger">Mobile Number is required</small>
+                    <small *ngIf="f.mobile.errors?.pattern" class = "text-danger">Mobile Number must be of 10 digits</small>
+                </div>
+            </div>
+            <div class="row">
+                <label for="email">Email</label><br>
+                <input formControlName="email" type="email" placeholder="Email">
+                <div *ngIf = "f.email.invalid && f.email.touched">
+                    <small *ngIf="f.email.errors?.required" class="text-danger">Email is required</small>
+                    <small *ngIf="f.email.errors?.email" class="text-danger">Email is invalid</small>
+                </div>
+            </div>
+            <div class="row">
+                <label for="address">Address</label><br>
+                <input formControlName="address" type="text" placeholder="Address">
+                <small *ngIf="f.address.invalid && f.address.touched" class = "text-danger"><br>Address is required</small>
+            </div>
+            <div class="row atd-flex">
+                <label for="attendance">Attendance : </label>
+                <div class="dates" *ngFor="let list of myList">
+                    <span>{{list.date}} : </span>
+                    <mat-button-toggle-group #toggleGroup="matButtonToggleGroup" [value]="list.present" (change)="changedValue(list.date, toggleGroup.value)">
+                        <mat-button-toggle value="present" [class.present]="list.present">Present</mat-button-toggle>
+                        <mat-button-toggle value="absent" [class.absent]="!list.present">Absent</mat-button-toggle>
+                    </mat-button-toggle-group>
+                </div>
+            </div>
+            <div class="row" id="add-btn">
+                <button  class="btn" (click)="onSubmit()">Update</button>
+                <button class="btn" (click)="cancelbtn()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</section>

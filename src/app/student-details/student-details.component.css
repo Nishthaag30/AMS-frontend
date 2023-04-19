@@ -1,0 +1,203 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;    
+    /* border: none; */
+    text-decoration: none;
+}
+header{
+    display: flex;
+    justify-content:space-between;
+    height: 100px;
+    width: 100%;
+    background-color:steelblue;
+}
+button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.logo{
+    margin-left: 60px;
+    padding: 5px;
+}
+header .logo img{
+    height: 90px;
+    width: auto;
+}
+nav{
+    position: absolute;
+    top: 105px;
+    bottom: 0;
+    background-color: steelblue;
+    height: 85vh;
+    left: 0;
+    width: 70px;
+    overflow: hidden;
+    transition: width 0.2s linear;
+    box-shadow: 0px 4px 10px 1px rgba(0,0,0,0.1);
+    /* border-radius: 0 0 5px 5px; */
+}
+.list{
+    height: 100%;
+    background-color: #fff;
+    display: none;
+}
+.item{
+    position: relative;
+    color: steelblue;
+    font-size: 20px;
+    display: table;
+    width: 300px;
+    padding: 10px;
+    transition: 0.2s;
+    text-align: center;
+    margin-left: -50px;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    gap: 10px;
+}
+hr{
+    width: 80%;
+    margin-left: 10%;
+    color: #bdbdbd;
+}
+.align-bottom{
+    position: absolute;
+    bottom: 10px;
+}
+.align-bottom hr{
+    width: 70%;
+    margin-left: 5%;
+    color: #bdbdbd;
+    margin-top: 5px;
+    margin-bottom: -5px;
+}
+.nav-icon{
+    width: 70px;
+    height: 55px;
+    margin: auto;
+    padding-left: 10px;
+}
+mat-icon{
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    top: 5px;
+    font-size: 45px;
+    color: white;
+}
+.nav-span{
+    color: steelblue;
+    margin-top: 10px;
+}
+ul li mat-icon{
+    font-size: 30px;
+    color: #5a5a5a;
+}
+nav:hover{
+    width: 200px;
+}
+nav:hover .list{
+    display: block;
+    background-color: #fff;
+    transition: all 1s ease;
+}
+.list li:hover .item{
+    padding-left: 20px;
+}
+section{
+    height: auto;
+    margin-left: 70px;
+    background-size: cover;
+    transition: all .5s ;
+    overflow: hidden;
+}
+nav:hover ~ section{
+    margin-left: 150px;
+}
+section .main-heading{
+    margin-left: 5%;
+    height: 120px;
+    width: 90%;
+    color: #6f6f6f;
+    font-weight: 600;
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.button-op{
+    margin-top: 20px;
+    margin-left: 5%;
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-op button{
+    height: 45px;
+    /* width: auto; */
+    background-color: steelblue;
+    border: 2px solid steelblue;
+    border-radius: 5px;
+    color: white;
+    font-size: 17px;
+    padding: 0px 10px;
+    cursor: pointer;
+    /* box-shadow: 4px 10px 20px rgba(0,0,0,0.1); */
+}
+.add{
+    /* z-index: 1; */
+    box-shadow: 2px 2px 3px rgb(59, 59, 59);
+}
+.details{
+    width: 100%;
+    height: auto;
+    margin-bottom: 100px ;
+    margin-top: 40px;
+}
+table{
+    margin-left: 5%;
+    position: absolute;
+    width: 85%;
+    height: auto;
+    text-align: center;
+    border: 5px solid steelblue;
+    border-spacing: 0;
+    box-shadow: 4px 10px 20px rgba(0,0,0,0.1);
+}
+table tr th{
+    font-weight: 500;
+    font-size: 18px;
+    height: 40px;
+    color: white;
+    background-color: steelblue;
+}
+table tr{
+    height: auto;
+    font-size: 16px;
+}
+table tr td{
+    border-right: 1px solid steelblue;
+    font-weight: normal;
+    border-bottom: 1px solid steelblue;
+}
+.upd-dlt-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 5px;
+}
+.upd-dlt-btn mat-icon{
+    color: steelblue;
+    font-size: 30px;
+    margin-bottom: 8px;
+}

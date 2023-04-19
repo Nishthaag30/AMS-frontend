@@ -1,0 +1,63 @@
+<header>
+    <div class="logo">
+      <img src="../../assets/logo.png" alt="">
+    </div> 
+</header>
+<!-- <nav>
+  <a href="#"><i class="fa-solid fa-bars"></i></a>
+    <ul class="list">
+      <li><button (click) = "dashboard()"class="item">Dashboard</button></li><hr>
+      <li><button (click)="cancelbtn()" class="item">View Students</button></li>
+    </ul>
+</nav> -->
+<section class="main">
+    <div class="main-heading">
+        Add New Student
+    </div>
+    <div class="wrapper-form">
+        <form action="#" [formGroup]="addStudentForm" (ngSubmit)= "onSubmit();addStudentForm.reset()">
+            <div class="flex">
+                <div class="row ">
+                    <label for="name">Name</label><br>
+                    <input formControlName="name" type="text">
+                    <small *ngIf="f.name.invalid && f.name.touched" class = "text-danger"><br>Name is required</small>
+                </div>
+                <div class="row">
+                    <label for="DOB">DOB</label><br>
+                    <div class="newflex">
+                        <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" formControlName="DOB" placeholder="MM/DD/YYYY">
+                        <mat-datepicker-toggle matIcon [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker startView="year" [startAt]="minDate"></mat-datepicker>
+                    </div>
+                    <small *ngIf="f.DOB.invalid && f.DOB.touched" class = "text-danger">Date-of-Birth is required</small>
+                </div>
+            </div>
+            <div class="row">
+                <label for="mobile">Mobile No</label><br>
+                <input formControlName="mobile" type="tel" >
+                <div *ngIf="f.mobile.invalid && f.mobile.touched">
+                    <small *ngIf="f.mobile.errors?.required" class = "text-danger">Mobile Number is required</small>
+                    <small *ngIf="f.mobile.errors?.pattern" class = "text-danger">Mobile Number must be of 10 digits</small>
+                </div>
+            </div>
+            <div class="row">
+                <label for="email">Email</label><br>
+                <input formControlName="email" type="email" >
+                <div *ngIf = "f.email.invalid && f.email.touched">
+                    <small *ngIf="f.email.errors?.required" class="text-danger">Email is required</small>
+                    <small *ngIf="f.email.errors?.email" class="text-danger">Email is invalid</small>
+                </div>
+            </div>
+            <div class="row">
+                <label for="address">Address</label><br>
+                <input formControlName="address" type="text" >
+                <small *ngIf="f.address.invalid && f.address.touched" class = "text-danger"><br>Address is required</small>
+            </div>
+            <!-- {{addStudentForm.valid}} -->
+            <div class="row" id="add-btn">
+                <button [disabled] = "!(f.name.valid && f.email.valid && f.mobile.valid && f.DOB.valid && f.address.valid)" class="btn">Add</button>
+                <button class="btn" (click)="cancelbtn()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</section>
